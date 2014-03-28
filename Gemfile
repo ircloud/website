@@ -44,8 +44,9 @@ end
 gem "formtastic"
 gem 'foundation-rails'
 
+gem "gettext", :require => false, :group => :development
 gem "fast_gettext"
-gem "ruby_parser", :group => :development
+gem "ruby_parser", :group => :development, :require => false
 gem 'gettext_i18n_rails'
 
 
