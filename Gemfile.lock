@@ -70,6 +70,9 @@ GEM
     mail (2.5.4)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
+    mailgun (0.7)
+      multimap
+      rest-client
     meta_request (0.2.8)
       callsite
       rack-contrib
@@ -78,6 +81,7 @@ GEM
     mime-types (1.25.1)
     minitest (4.7.5)
     multi_json (1.9.2)
+    multimap (1.1.2)
     polyglot (0.3.4)
     pry (0.9.12.6)
       coderay (~> 1.0)
@@ -105,6 +109,8 @@ GEM
     rdoc (4.1.1)
       json (~> 1.4)
     ref (1.0.5)
+    rest-client (1.6.7)
+      mime-types (>= 1.16)
     ruby_parser (3.5.0)
       sexp_processor (~> 4.1)
     sass (3.2.18)
@@ -159,6 +165,7 @@ DEPENDENCIES
   gettext_i18n_rails
   jbuilder (~> 1.2)
   jquery-rails
+  mailgun
   meta_request
   pry
   rails (= 4.0.4)
