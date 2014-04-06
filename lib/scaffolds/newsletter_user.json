@@ -1,0 +1,11 @@
+{
+    "name": "newsletter_user",
+    "fields": [
+        {
+            "name": "email",
+            "type": "string"
+        }
+    ],
+    "no_filter": true,
+    "title_field": "name"
+}

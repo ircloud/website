@@ -1,0 +1,30 @@
+{
+    "name": "newsletter",
+    "fields": [
+        {
+            "name": "title",
+            "type": "string"
+        },
+        {
+            "name": "content",
+            "type": "text"
+        }
+    ],
+    "no_filter": true,
+    "menu": [
+        {
+            "model": "Newsletter",
+            "title": "Newsletters",
+            "url": "newsletters"
+        },
+        {
+            "model": "NewsletterUser",
+            "title": "Newsletter Users",
+            "url": "newsletter_users"
+        }
+    ],
+    "deps": [
+        "newsletter_user"
+    ],
+    "title-field": "title"
+}

@@ -1,4 +1,4 @@
-source 'https://rubygems.org'
+source 'http://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.4'
@@ -58,3 +58,5 @@ group :development do
 end
 
 gem "mailgun"
+
+gem "faalis"
