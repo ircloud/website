@@ -1,3 +1,209 @@
 // Place all the styles related to the home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+$color1:#0096CD;//#00b4bf;
+$color3:#006A8C;
+$heimgheight:400px;
+$hpadding:40px;
+$headfont:'Far.TextBold';
+$bigheadfont:'Far_Yekan';
+body{
+  font-family: nassim;
+  font-size: 16px;
+}
+img{
+  padding: 1px;
+}
+li{
+  a{
+    font-family: nassim;
+  }
+}
+.half{
+  width: 50%;
+  position: relative;
+  z-index: 10;
+
+}
+h3, h2{
+  font-family: $bigheadfont;
+}
+h4, h5{
+  font-family: nassim;
+}
+.sfull{
+  @extend .half;
+  width: 80%;
+  margin: 20px;
+  height: 50px;
+}
+.full{
+ @extend .sfull;
+  width: 100%;
+}
+.header{
+  background-color: $color1;
+  height: $heimgheight + $hpadding + 50px;
+  text-align: center;
+  width: 100%;
+
+  .myimg{
+    width: 100%;
+    text-align: center;
+    position: absolute;
+    padding: $hpadding;
+  }
+  img{
+    //position: absolute;
+    height: $heimgheight;
+    z-index: 1;
+    padding: 1px;
+  }
+  .myh2 {
+    left: 80px;
+    position: relative;
+    top: -20px;
+  }
+  .myh3 {
+    position: relative;
+    top: -40px;
+  }
+  .myh4 {
+    position: relative;
+    left: 25px;
+  }
+  .mytext{
+    div{
+      h2, h1{
+        color: $color1;
+      }
+    }
+
+  }
+}
+.myh2, .myh4{
+  h2, h1{
+    font-family: $bigheadfont;
+    font-size: 30px;
+  }
+}
+.myh3{
+  h2, h1{
+    font-size: 90px;
+    font-family: $headfont;
+  }
+}
+.myh5{
+  @extend .myh3;
+  h2, h1{
+    font-size: 60px;
+  }
+  span{
+    font-size: 18px;
+  }
+}
+$iconheight:100px;
+.mainhicon{
+  width: 100%;
+  background-color: $color1;
+  height: $iconheight * 2;
+  .half{
+    width: 70%;
+    margin-right: auto;
+    margin-left: auto;
+    position: relative;
+    left: -4%;
+    .headicon{
+      float: right;
+      margin: $hpadding;
+      transition: all 0.2s ease-out 0s;
+      img{
+        height: $iconheight;
+      }
+    }.headicon:hover{
+            opacity: 0.6;
+         }
+  }
+}
+.mysection{
+  min-height: 340px;
+  width: 90%;
+  margin-top: 50px;
+  margin-left: auto;
+  margin-right: auto;
+  .myintro{
+    .text-justify{
+      padding: 20px;
+    }
+  }
+  .myintroimg{
+    height: 340px;
+    img{
+      padding-top: 10%;
+    }
+  }
+}
+.inmail{
+  width: 250px;
+}
+.firstdiv{
+  .subhead{
+    height: 100px;
+    margin: 100px;
+  }
+  .ctype{
+    P{
+      padding-left: $hpadding;
+      padding-right: $hpadding;
+    }
+    .button{
+      width: 150px;
+      font-family: $bigheadfont;
+      font-size: 18px;
+      padding: 5px;
+    }
+    img{
+      height: $iconheight;
+    }
+  }
+}
+.myseprator{
+  width: 100%;
+  height: 70px;
+  background-color: darkslategrey;
+}
+.myseprator2{
+  background-color: $color3;
+  height: 500px;
+  padding-top: 80px;
+  h2, p, h3, h4, h5{
+    color: white;
+  }
+  .startbutton{
+    background-color: $color3;
+    border: 3px solid white;
+    border-radius: 6px;
+    font-family: $bigheadfont;
+    font-size: 20px;
+    margin-top: 20px;
+  }
+  .startbutton:hover{
+    background-color: white;
+    color: $color3;
+  }
+  .start{
+    margin-top: 30px;
+  }
+  .row{
+    width: 50%;
+    .myinput input{
+      border-radius: 5px;
+      position: relative;
+      top: 5%;
+    }
+    .myreg a{
+      line-height: 5px;
+      font-family: nassim;
+    }
+  }
+}

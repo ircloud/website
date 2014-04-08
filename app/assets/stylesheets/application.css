@@ -13,3 +13,69 @@
 
  *= require_tree .
  */
+@font-face {
+    font-family:"Nassim";src:url("fonts/Nassim.eot");src:local("?"),url("fonts/Nassim.woff") format("woff"),url("fonts/Nassim.ttf") format("truetype");
+}
+@font-face {
+    font-family: 'Far.TextBold';
+    src: url('fonts/Far_TextBold.eot');
+    src: local('â˜º'), url('fonts/Far_TextBold.woff') format('woff'), url('fonts/Far_TextBold.ttf') format('truetype'), url('fonts/Far_TextBold.svg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Far_Beirut';
+    src: url('fonts/Far_Beirut.eot');
+    src: local('â˜º'), url('fonts/Far_Beirut.woff') format('woff'), url('fonts/Far_Beirut.ttf') format('truetype'), url('fonts/Far_Beirut.svg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Far_DastNevis';
+    src: url('fonts/Far_DastNevis.eot');
+    src: local('â˜º'), url('fonts/Far_DastNevis.woff') format('woff'), url('fonts/Far_DastNevis.ttf') format('truetype'), url('fonts/Far_DastNevis.svg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Far_Egypt';
+    src: url('fonts/Far_Egypt.eot');
+    src: local('â˜º'), url('fonts/Far_Egypt.woff') format('woff'), url('fonts/Far_Egypt.ttf') format('truetype'), url('fonts/Far_Egypt.svg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Far_TitrBd';
+    src: url('fonts/Far_TitrBd.eot');
+    src: local('â˜º'), url('fonts/Far_TitrBd.woff') format('woff'), url('fonts/Far_TitrBd.ttf') format('truetype'), url('fonts/Far_TitrBd.svg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Far_TrafcBd';
+    src: url('fonts/Far_TrafcBd.eot');
+    src: local('â˜º'), url('fonts/Far_TrafcBd.woff') format('woff'), url('fonts/Far_TrafcBd.ttf') format('truetype'), url('fonts/Far_TrafcBd.svg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Far_Yekan';
+    src: url('fonts/Far_Yekan.eot');
+    src: local('â˜º'), url('fonts/Far_Yekan.woff') format('woff'), url('fonts/Far_Yekan.ttf') format('truetype'), url('fonts/Far_Yekan.svg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'TitrBold';
+    src: url('fonts/TitrBold.eot');
+    src: local('â˜º'), url('fonts/TitrBold.woff') format('woff'), url('fonts/TitrBold.ttf') format('truetype'), url('fonts/TitrBold.svg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Traffic';
+    src: url('fonts/Traffic.eot');
+    src: local('â˜º'), url('fonts/Traffic.woff') format('woff'), url('fonts/Traffic.ttf') format('truetype'), url('fonts/Traffic.svg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
