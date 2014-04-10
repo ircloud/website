@@ -69,10 +69,10 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.7.0)
-    compass (0.12.4)
+    compass (0.12.5)
       chunky_png (~> 1.2)
       fssm (>= 0.2.7)
-      sass (~> 3.2.17)
+      sass (~> 3.2.19)
     compass-rails (1.1.7)
       compass (>= 0.12.2)
       sprockets (<= 2.11.0)
@@ -99,7 +99,7 @@ GEM
     gettext (3.1.1)
       locale (>= 2.0.5)
       text
-    gettext_i18n_rails (1.0.3)
+    gettext_i18n_rails (1.0.4)
       fast_gettext (>= 0.4.8)
     hashie (2.1.0)
     hike (1.2.3)
@@ -120,10 +120,9 @@ GEM
       carrierwave (>= 0.5.8)
       foreigner (>= 0.9.1)
       rails (> 3.0.0)
-    mailgun (0.7)
-      multimap
+    mailgun (0.8)
       rest-client
-    meta_request (0.2.8)
+    meta_request (0.2.9)
       callsite
       rack-contrib
       railties
@@ -134,7 +133,6 @@ GEM
       rails (~> 4.0.2)
     modernizr-rails (2.7.1)
     multi_json (1.9.2)
-    multimap (1.1.2)
     omniauth (1.2.1)
       hashie (>= 1.2, < 3)
       rack (~> 1.0)
@@ -196,12 +194,12 @@ GEM
       libv8 (~> 3.16.14.0)
       ref
     thor (0.19.1)
-    thread_safe (0.3.2)
+    thread_safe (0.3.3)
     tilt (1.4.1)
     treetop (1.4.15)
       polyglot
       polyglot (>= 0.3.1)
-    turbolinks (2.2.1)
+    turbolinks (2.2.2)
       coffee-rails
     tzinfo (0.3.39)
     uglifier (2.5.0)

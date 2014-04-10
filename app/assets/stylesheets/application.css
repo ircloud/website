@@ -10,8 +10,7 @@
  *
  *= require_self
  *= require foundation_and_overrides
-
- *= require_tree .
+ *= require home
  */
 @font-face {
     font-family:"Nassim";src:url("fonts/Nassim.eot");src:local("?"),url("fonts/Nassim.woff") format("woff"),url("fonts/Nassim.ttf") format("truetype");
