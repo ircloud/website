@@ -1,0 +1,30 @@
+
+
+
+<form novalidate name="form">
+ <div class="newform">
+  <fieldset class="form">
+
+    <legend ng-if="!editing"><span translate>New Newsletter users</span></legend>
+    <legend ng-if="editing"><span translate>Edit Newsletter users</span></legend>
+
+    
+    <div class="row">
+      <div class="small-4 columns ">
+        <label><span translate>Email</span> :</label>
+        <string-field model="email" field-name="'email'" css-class="'rounded string_field'" ></string-field>
+      </div>
+    
+  </fieldset>
+</form>
+
+
+
+  <div class="row">
+      <div class="small-6 columns">
+        <button class="btn small green" ng-click="save(false)" ng-disabled="form.$invalid || !form.$dirty"><i class="fa fa-check"></i> <span translate>Save</span></button>
+        <button class="btn small blue" ng-click="save(true)" ng-disabled="form.$invalid || !form.$dirty"><i class="fa fa-check"></i> <span translate>Save & Add Another</span></button>
+        <button class="btn small red" ng-click="cancel()"><i class="fa fa-times"></i> <span translate>Cancel</span></button>
+      </div>
+  </div>
+</div>

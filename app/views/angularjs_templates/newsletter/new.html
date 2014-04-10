@@ -1,0 +1,36 @@
+
+
+
+<form novalidate name="form">
+ <div class="newform">
+  <fieldset class="form">
+
+    <legend ng-if="!editing"><span translate>New Newsletters</span></legend>
+    <legend ng-if="editing"><span translate>Edit Newsletters</span></legend>
+
+    
+    <div class="row">
+      <div class="small-4 columns ">
+        <label><span translate>Title</span> :</label>
+        <string-field model="title" field-name="'title'" css-class="'rounded string_field'" ></string-field>
+      </div>
+    
+    
+      <div class="small-4 columns float-left small-offset-2">
+        <label><span translate>Content</span> :</label>
+        <text-field model="content" field-name="'content'" css-class="'rounded text_field'" ></text-field>
+      </div>
+    </div>
+  </fieldset>
+</form>
+
+
+
+  <div class="row">
+      <div class="small-6 columns">
+        <button class="btn small green" ng-click="save(false)" ng-disabled="form.$invalid || !form.$dirty"><i class="fa fa-check"></i> <span translate>Save</span></button>
+        <button class="btn small blue" ng-click="save(true)" ng-disabled="form.$invalid || !form.$dirty"><i class="fa fa-check"></i> <span translate>Save & Add Another</span></button>
+        <button class="btn small red" ng-click="cancel()"><i class="fa fa-times"></i> <span translate>Cancel</span></button>
+      </div>
+  </div>
+</div>
