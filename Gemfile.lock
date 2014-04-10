@@ -1,3 +1,23 @@
+PATH
+  remote: /home/lxsameer/src/Yellowen/Faalis
+  specs:
+    faalis (0.24.4)
+      cancan
+      compass-rails
+      devise (~> 3.2.0)
+      fast_gettext
+      font-awesome-rails
+      foundation-rails
+      gettext_i18n_rails
+      jbuilder
+      jquery-rails
+      mailboxer
+      model_discovery (~> 0.2.3)
+      modernizr-rails
+      omniauth
+      rails (~> 4.0.4)
+      sass-rails (>= 4.0.0)
+
 GEM
   remote: http://rubygems.org/
   specs:
@@ -65,22 +85,6 @@ GEM
       warden (~> 1.2.3)
     erubis (2.7.0)
     execjs (2.0.2)
-    faalis (0.24.3)
-      cancan
-      compass-rails
-      devise (~> 3.2.0)
-      fast_gettext
-      font-awesome-rails
-      foundation-rails
-      gettext_i18n_rails
-      jbuilder
-      jquery-rails
-      mailboxer
-      model_discovery (~> 0.2.3)
-      modernizr-rails
-      omniauth
-      rails (~> 4.0.4)
-      sass-rails (>= 4.0.0)
     fast_gettext (0.8.1)
     font-awesome-rails (4.0.3.1)
       railties (>= 3.2, < 5.0)
@@ -97,7 +101,7 @@ GEM
       text
     gettext_i18n_rails (1.0.3)
       fast_gettext (>= 0.4.8)
-    hashie (2.0.5)
+    hashie (2.1.0)
     hike (1.2.3)
     i18n (0.6.9)
     jbuilder (1.5.3)
@@ -212,7 +216,7 @@ PLATFORMS
 DEPENDENCIES
   better_errors
   binding_of_caller
-  faalis
+  faalis!
   fast_gettext
   formtastic
   foundation-rails

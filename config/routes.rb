@@ -1,5 +1,8 @@
 Website::Application.routes.draw do
-  mount Faalis::Engine => "/"
+
+  root 'home#index'
+
+  mount Faalis::Engine => '/'
 
   namespace :api, :defaults => {:format => :json} do
     namespace :v1 do

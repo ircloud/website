@@ -41,22 +41,29 @@ end
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
-gem "formtastic"
+gem 'formtastic'
 gem 'foundation-rails'
 
-gem "gettext", :require => false, :group => :development
-gem "fast_gettext"
-gem "ruby_parser", :group => :development, :require => false
+gem 'gettext', :require => false, :group => :development
+gem 'fast_gettext'
+gem 'ruby_parser', :group => :development, :require => false
 gem 'gettext_i18n_rails'
 
 
 group :development do
-  gem "pry"
-  gem "better_errors"
-  gem "binding_of_caller"
-  gem "meta_request"
+  gem 'pry'
+  gem 'better_errors'
+  gem 'binding_of_caller'
+  gem 'meta_request'
 end
 
-gem "mailgun"
+gem 'mailgun'
 
-gem "faalis"
+development_file = [File.expand_path(File.dirname(__FILE__)),
+                    '.development'].join('/')
+
+if File.exists?(development_file)
+  gem 'faalis', :path => '/home/lxsameer/src/Yellowen/Faalis/'
+else
+  gem 'faalis', :github => 'Yellowen/faalis'
+end
