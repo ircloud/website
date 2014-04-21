@@ -1,5 +1,6 @@
-PATH
-  remote: /home/lxsameer/src/Yellowen/Faalis
+GIT
+  remote: git://github.com/Yellowen/faalis.git
+  revision: 8df4808d8e1cb600acfbeb813b8e65c2ca478e5b
   specs:
     faalis (0.24.4)
       cancan
