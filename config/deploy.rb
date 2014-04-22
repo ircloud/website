@@ -30,7 +30,7 @@ set :bundle_flags, "--deployment --quiet --binstubs --shebang ruby-local-exec"
 server "54.214.2.25", :app, :web, :db, :primary => true
 
 after 'deploy:update_code', 'deploy:migrate'
-after 'deploy:migrate', :defaultsettings
+#after 'deploy:migrate', :defaultsettings
 # if you want to clean up old releases on each deploy uncomment this:
 #set :keep_releases, 5
 after "deploy:restart", "deploy:cleanup"
@@ -61,5 +61,3 @@ desc "precompile the assets"
 task :precompile_assets, :roles => :app do
   run "cd #{release_path} && RAILS_ENV=#{rails_env} bundle exec rake assets:precompile"
 end
-
-desc "Deploy default settings"
