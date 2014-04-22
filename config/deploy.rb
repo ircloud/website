@@ -63,7 +63,3 @@ task :precompile_assets, :roles => :app do
 end
 
 desc "Deploy default settings"
-task :defaultsettings, :roles => :app do
-  run "cd #{release_path} && RAILS_ENV=#{rails_env} bundle exec rake db:setup:locations --trace"
-  run "cd #{release_path} && RAILS_ENV=#{rails_env} bundle exec rake db:setup:defaultadmin --trace"
-end
