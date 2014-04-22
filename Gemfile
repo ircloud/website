@@ -67,3 +67,5 @@ if File.exists?(development_file)
 else
   gem 'faalis', :github => 'Yellowen/faalis'
 end
+
+gem 'capistrano', "2.15.5"
