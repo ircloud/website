@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/Yellowen/faalis.git
-  revision: b0297d7b6ed99a832c6b54626485f016a887190f
+  revision: c11bff01d0c362d0b418781c6ef5e2398cf9e07f
   specs:
     faalis (0.24.4)
       cancan
