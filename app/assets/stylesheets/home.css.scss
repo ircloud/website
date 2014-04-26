@@ -7,6 +7,7 @@ $heimgheight:400px;
 $hpadding:40px;
 $headfont:'Far.TextBold';
 $bigheadfont:'Far_Yekan';
+$color4:darkslategrey;
 body{
   font-family: nassim;
   font-size: 16px;
@@ -18,6 +19,9 @@ li{
   a{
     font-family: nassim;
   }
+}
+.byekan{
+  font-family: 'Far_Yekan' !important;
 }
 .half{
   width: 50%;
@@ -126,7 +130,8 @@ $iconheight:100px;
   }
 }
 .mysection{
-  min-height: 340px;
+  height: auto;
+  min-height: 300px;
   width: 90%;
   margin-top: 50px;
   margin-left: auto;
@@ -137,7 +142,7 @@ $iconheight:100px;
     }
   }
   .myintroimg{
-    height: 340px;
+    height: auto;
     img{
       padding-top: 10%;
     }
@@ -151,36 +156,35 @@ $iconheight:100px;
     height: 100px;
     margin: 100px;
   }
-  .ctype{
-    P{
-      padding-left: $hpadding;
-      padding-right: $hpadding;
-    }
-    .button{
-      width: 150px;
-      font-family: $bigheadfont;
-      font-size: 18px;
-      padding: 5px;
-    }
-    img{
-      height: $iconheight;
-    }
+}
+.ctype{
+  P{
+    padding-left: $hpadding;
+    padding-right: $hpadding;
+  }
+  .button{
+    width: 150px;
+    font-family: $bigheadfont;
+    font-size: 18px;
+    padding: 5px;
+  }
+  img{
+    height: $iconheight;
   }
 }
-.myseprator{
-  width: 100%;
-  height: 70px;
-  background-color: darkslategrey;
-}
-.myseprator2{
-  background-color: $color3;
-  height: 500px;
+$sepcolor1 : $color3;
+$sepcolor2 : $color4;
+@mixin seprator($sepcolor){
+  background-color: $sepcolor;
+  height: auto;
   padding-top: 80px;
+  padding-bottom: 20px;
+  width: 100%;
   h2, p, h3, h4, h5{
     color: white;
   }
   .startbutton{
-    background-color: $color3;
+    background-color: $sepcolor;
     border: 3px solid white;
     border-radius: 6px;
     font-family: $bigheadfont;
@@ -189,7 +193,7 @@ $iconheight:100px;
   }
   .startbutton:hover{
     background-color: white;
-    color: $color3;
+    color: $sepcolor;
   }
   .start{
     margin-top: 30px;
@@ -206,4 +210,70 @@ $iconheight:100px;
       font-family: nassim;
     }
   }
+}
+.myseprator2{ @include seprator($sepcolor1) }
+.myseprator{
+  @include seprator($sepcolor2);
+  padding-top: 30px;
+  }
+.myseprator3{
+  @include seprator(#0096A5);
+  padding-top: 30px;
+}
+.myseprator4{
+  @include seprator(#EEEEEE);
+  p, h1, h2, h3, h4, h5{color: black;}
+  padding: 20px;
+}
+.tick{
+  background-image: url("/assets/tick2.png");
+  background-position: 100% center;
+  background-repeat: no-repeat;
+  padding-right: 25px;
+}
+#back-top {
+  position: fixed;
+  bottom: 30px;
+  margin-left: -150px;
+
+  a {
+    width: 108px;
+    display: block;
+    text-align: center;
+    font: 11px/100% Arial, Helvetica, sans-serif;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #bbb;
+
+    -webkit-transition: 1s;
+    -moz-transition: 1s;
+    transition: 1s;
+
+    &:hover {
+      color: #000;
+    }
+  }
+
+  span {
+    width: 108px;
+    height: 108px;
+    display: block;
+    margin-bottom: 7px;
+    background: #ddd url(up-arrow.png) no-repeat center center;
+
+    /* rounded corners */
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    border-radius: 15px;
+
+    /* transition */
+    -webkit-transition: 1s;
+    -moz-transition: 1s;
+    transition: 1s;
+  }
+
+  a:hover span {
+    background-color: #777;
+  }
+
 }
