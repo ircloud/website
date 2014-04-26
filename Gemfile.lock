@@ -231,6 +231,7 @@ DEPENDENCIES
   better_errors
   binding_of_caller
   capistrano (= 2.15.5)
+  compass-rails
   faalis!
   fast_gettext
   formtastic

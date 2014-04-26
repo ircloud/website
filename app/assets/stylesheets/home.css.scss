@@ -207,3 +207,50 @@ $iconheight:100px;
     }
   }
 }
+
+#back-top {
+  position: fixed;
+  bottom: 30px;
+  margin-left: -150px;
+
+  a {
+    width: 108px;
+    display: block;
+    text-align: center;
+    font: 11px/100% Arial, Helvetica, sans-serif;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #bbb;
+
+    -webkit-transition: 1s;
+    -moz-transition: 1s;
+    transition: 1s;
+
+    &:hover {
+      color: #000;
+    }
+  }
+
+  span {
+      width: 108px;
+      height: 108px;
+      display: block;
+      margin-bottom: 7px;
+      background: #ddd url(up-arrow.png) no-repeat center center;
+
+      /* rounded corners */
+      -webkit-border-radius: 15px;
+      -moz-border-radius: 15px;
+      border-radius: 15px;
+
+      /* transition */
+      -webkit-transition: 1s;
+      -moz-transition: 1s;
+      transition: 1s;
+  }
+
+  a:hover span {
+    background-color: #777;
+  }
+
+}
