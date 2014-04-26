@@ -16,6 +16,6 @@
 //= require turbolinks
 //= require home
 
-$(function(){
+$(function() {
     $(document).foundation();
 });
