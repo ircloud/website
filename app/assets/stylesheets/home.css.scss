@@ -47,7 +47,7 @@ h4, h5{
 }
 .header{
   background-color: $color1;
-  height: $heimgheight + $hpadding + 50px;
+  height: $heimgheight;
   text-align: center;
   width: 100%;
 
@@ -109,10 +109,10 @@ h4, h5{
 $iconheight:100px;
 .mainhicon{
   width: 100%;
+  height: $iconheight + 30;
   background-color: $color1;
-  height: $iconheight * 2;
   .half{
-    width: 70%;
+
     margin-right: auto;
     margin-left: auto;
     position: relative;
@@ -122,7 +122,7 @@ $iconheight:100px;
       margin: $hpadding;
       transition: all 0.2s ease-out 0s;
       img{
-        height: $iconheight;
+        height: $iconheight/2;
       }
     }.headicon:hover{
             opacity: 0.6;
