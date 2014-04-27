@@ -1,6 +1,11 @@
 // Place all the behaviors and hooks related to the matching controller here.
 // All this logic will automatically be available in application.js.
 $(document).ready(function() {
+   var winheight = window.innerHeight;
+    if(winheight < 800 && winheight > 400){
+    var hheight = winheight - $('.top-bar').height() - $('.mainhicon').height();
+    $('.header').height(hheight);
+    }
     $('#back-top').hide();
 
     $(function() {
