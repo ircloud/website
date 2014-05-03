@@ -1,22 +1,22 @@
 require "bundler/capistrano"
+require 'capistrano-unicorn'
+
 load 'deploy/assets'
 
 set :default_environment, {
-  'RBENV_ROOT' => '/home/karevan/.rbenv',
-  'PATH' => "/home/karevan/.rbenv/shims:/home/karevan/.rbenv/bin:$PATH"
+  'RBENV_ROOT' => '/usr/local/rbenv',
+  'PATH' => "/usr/local/rbenv/shims:/usr/local/rbenv/bin:$PATH"
 }
 
 set :application, "54.214.2.25"
-set :user, "karevan"
+set :user, "stackbox"
 set :use_sudo, false
 
-#set :repository,  "http://sstub:"Moh@123!ali"@bitbucket.org/mfaraji/karvan-rails.git"
 set :repository,  "git://github.com/ircloud/website.git"
 #set :branch, "deploy"
-#set :scm_user, "sstub"
-#set :scm_password, "Moh@123!ali"
+
 set :ssh_options, { :forward_agent => true }
-set :deploy_to, "/home/karevan/www/"
+set :deploy_to, "/home/stackbox/www/"
 
 set :bundle_flags, "--deployment --quiet --binstubs --shebang ruby-local-exec"
 # set :scm, :git # You can set :scm explicitly or Capistrano will make an intelligent guess based on known version control directory names
@@ -61,3 +61,8 @@ desc "precompile the assets"
 task :precompile_assets, :roles => :app do
   run "cd #{release_path} && RAILS_ENV=#{rails_env} bundle exec rake assets:precompile"
 end
+
+
+after 'deploy:restart', 'unicorn:reload'    # app IS NOT preloaded
+after 'deploy:restart', 'unicorn:restart'   # app preloaded
+after 'deploy:restart', 'unicorn:duplicate' # before_fork hook implemented (zero downtime deployments)
