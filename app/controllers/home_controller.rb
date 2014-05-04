@@ -7,4 +7,6 @@ class HomeController < ApplicationController
   end
   def hybridcloud
   end
+  def signup
+  end
 end

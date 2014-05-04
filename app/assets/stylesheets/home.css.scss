@@ -20,6 +20,9 @@ li{
     font-family: nassim;
   }
 }
+.no-margin{
+  margin: 0px !important;
+}
 .byekan{
   font-family: 'Far_Yekan' !important;
 }
@@ -276,4 +279,85 @@ $sepcolor2 : $color4;
     background-color: #777;
   }
 
+}
+@mixin myborder($pix, $rad, $col){
+  border: $pix solid;
+  border-color: $col;
+  border-radius: $rad;
+}
+.myborder1{
+  //@include myborder(1px, 8px, #dddddd)
+  border-radius: 8px;
+  //border: 1px solid;
+}
+.signup{
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: white;//#DDDDDD;
+  box-shadow: 0 0 10px grey;
+  .header2{
+    background-color: $color1;
+    padding: 5%;
+    border-radius: 8px 8px 0 0;
+    div{
+    h1{
+      font-family: $headfont;
+      color: white;
+    }
+      h2, h3{
+      color: white;//#646463;
+      font-family: $bigheadfont;
+      //font-size: 30px;
+
+      }
+    }
+  }
+  .signuparea {
+    form {
+      .myform {
+        margin: 10%;
+        h3{
+          margin-bottom: 20px;
+          border-bottom: 1px solid #9b9b9b;
+          padding-bottom: 30px;
+          color: #606C60;
+        }
+        label{
+          font-size: 18px;
+        }
+        input{
+          border-radius: 4px;
+          text-transform: 2s;
+          background-color: #e7f3ff;//#ededed;
+        }
+      }
+    }
+    .myimage{
+      margin-top: 5%;
+      .signuplist{
+        margin-left: auto;
+        margin-right: auto;
+        width: 70%;
+      li{
+        font-size: 24px;
+      }
+      }
+
+    }
+  }
+
+}
+.backbone{
+  width: 100%;
+  background-color: #DDDDDD;//#EFF4F7;
+  padding-top: 1%;
+  padding-bottom: 1%;
+}
+[class*="block-grid-"]{
+  margin: 0 !important;
+}
+.homelink{
+  position: relative;
+  top: -10px;
 }

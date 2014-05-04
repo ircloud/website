@@ -3,6 +3,7 @@ Website::Application.routes.draw do
   root 'home#index'
   get 'home/privatecloud', to:'home#privatecloud'
   get 'home/hybridcloud', to:'home#hybridcloud'
+  get 'home/signup', to:'home#signup'
 
   mount Faalis::Engine => '/'
 

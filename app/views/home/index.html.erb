@@ -19,17 +19,24 @@
 </div>
 
 <div class="naviation sticky">
-  <nav class="top-bar" data-topbar>
+  <nav class="top-bar" data-topbar data-options="is_hover: true">
 
     <section class="top-bar-section">
+      <ul class="title-area">
+        <li class="name">
+          <h1><a>استک باکس</a></h1>
+        </li>
+        <li class="toggle-topbar menu-icon"><a><span>منو</span></a></li>
+      </ul>
       <!-- Right Nav Section -->
       <ul class="right">
+
         <li class="active"><a href="#">دموی خدمات رایانش ابری</a></li>
         <li class="has-dropdown"><a href="#">انواع خدمات ابر</a>
           <ul class="dropdown">
-            <li><a href="/home/privatecloud">ابر خصوصی</a></li>
-            <li><a href="/home/hybridcloud">ابر ترکیبی</a></li>
-            <li><a href="#">ابر عمومی</a></li>
+            <li><a href="/home/privatecloud" target="_blank">ابر خصوصی</a></li>
+            <li><a href="/home/hybridcloud"  target="_blank">ابر ترکیبی</a></li>
+            <li><a href="#"  target="_blank">ابر عمومی</a></li>
           </ul>
         </li>
         <li class="has-form inmail">
@@ -46,6 +53,9 @@
       </ul>
       <!-- Left Nav Section -->
       <ul class="left">
+        <li class="has-form"><a class="button" href="/home/signup" target="_blank">عضویت</a></li>
+        <li class="divider"></li>
+        <li><a href="/">خانه</a></li>
         <li class="divider"></li>
         <li><a href="#">پشتیبانی</a></li>
         <li class="divider"></li>
@@ -65,13 +75,13 @@
     <img src="/assets/private.png">
     <h3>سرویس خصوصی</h3>
     <p>پیاده سازی زیرساخت رایانش ابری به صورت خصوصی و کاملا امن در درون سازمان خود و یا مراکز داده ما</p>
-    <a class="button radius small">ادامه</a>
+    <a class="button radius small" href="/home/privatecloud" target="_blank">ادامه</a>
   </li>
   <li class="ctype">
     <img src="/assets/hybrid.png">
     <h3>سرویس ترکیبی</h3>
     <p>برای بهبود سرورها و مراکز داده یا زیرساخت رایانش ابری خود از ترکیب آن با خدمات ما استفاده کنید</p>
-    <a class="button radius small">ادامه</a>
+    <a class="button radius small" href="/home/hybridcloud" target="_blank">ادامه</a>
   </li>
   <li class="ctype">
     <img src="/assets/public.png">
@@ -125,6 +135,6 @@
     </div>
   </form>
   <p id="back-top" >
-    <a href="#top"><span></span>Back to Top</a>
+    <a href="#top"><span></span></a>
   </p>
 </div>

@@ -17,5 +17,10 @@
 //= require home
 
 $(function() {
-    $(document).foundation();
+    $(document).foundation('topbar', {
+        index : 0,
+        custom_back_text: true,
+        back_text: 'بازگشت',
+        scrolltop : false
+    });
 });
