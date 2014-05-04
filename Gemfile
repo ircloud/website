@@ -33,7 +33,7 @@ end
 # gem 'bcrypt', '~> 3.1.7'
 
 # Use unicorn as the app server
-# gem 'unicorn'
+gem 'unicorn'
 
 # Use Capistrano for deployment
 # gem 'capistrano', group: :development
@@ -68,4 +68,8 @@ else
   gem 'faalis', :github => 'Yellowen/faalis'
 end
 
-gem 'capistrano', "2.15.5"
+gem 'capistrano', '2.15.5'
+
+group :development do
+  gem 'capistrano-unicorn', :require => false
+end
