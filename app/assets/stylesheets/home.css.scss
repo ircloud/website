@@ -12,8 +12,14 @@ body{
   font-family: nassim;
   font-size: 16px;
 }
+p{
+  font-size: 20px;
+}
 img{
   padding: 1px;
+}
+.clear{
+  clear: both;
 }
 li{
   a{
@@ -25,6 +31,15 @@ li{
 }
 .byekan{
   font-family: 'Far_Yekan' !important;
+}
+.fit{
+  width: -moz-fit-content;
+  width: -webkit-fit-content;
+  width: -o-fit-content;
+}
+.center{
+  margin-right: auto !important;
+  margin-left: auto !important;
 }
 .half{
   width: 50%;
@@ -41,8 +56,8 @@ h4, h5{
 .sfull{
   @extend .half;
   width: 80%;
-  margin: 20px;
-  height: 50px;
+
+
 }
 .full{
  @extend .sfull;
@@ -81,6 +96,9 @@ h4, h5{
   }
   .mytext{
     div{
+      height: 50px;
+      margin-top: 20px;
+      margin-bottom: 20px;
       h2, h1{
         color: $color1;
       }
@@ -139,6 +157,7 @@ $iconheight:100px;
   margin-top: 50px;
   margin-left: auto;
   margin-right: auto;
+  margin-bottom: 5%;
   .myintro{
     .text-justify{
       padding: 20px;
@@ -208,9 +227,14 @@ $sepcolor2 : $color4;
       position: relative;
       top: 5%;
     }
-    .myreg a{
-      line-height: 5px;
-      font-family: nassim;
+    .myreg
+    {
+      position: relative;
+      left: 30px;
+      a{
+        line-height: 5px;
+        font-family: nassim;
+      }
     }
   }
 }
@@ -236,11 +260,12 @@ $sepcolor2 : $color4;
 }
 #back-top {
   position: fixed;
-  bottom: 30px;
+  bottom: 10px;
   margin-left: -150px;
+  z-index: 20;
 
   a {
-    width: 108px;
+    width: 80px;
     display: block;
     text-align: center;
     font: 11px/100% Arial, Helvetica, sans-serif;
@@ -258,8 +283,8 @@ $sepcolor2 : $color4;
   }
 
   span {
-    width: 108px;
-    height: 108px;
+    width: 80px;
+    height: 80px;
     display: block;
     margin-bottom: 7px;
     background: #ddd url(up-arrow.png) no-repeat center center;
@@ -360,4 +385,29 @@ $sepcolor2 : $color4;
 .homelink{
   position: relative;
   top: -10px;
+}
+.footer{
+  background-color: $color1;
+  width: 100%;
+  padding-top: 1%;
+  color: white;
+  *{
+    color: white;
+  }
+  h4{
+    font-family: $bigheadfont;
+  }
+  .copyright{
+    background-color: $color4;
+    //padding: 1%;
+    .up{
+      padding-top: 10px;
+      .inline-list{
+        a{
+          font-family: $bigheadfont;
+          font-size: 18px;
+        }
+      }
+    }
+  }
 }
