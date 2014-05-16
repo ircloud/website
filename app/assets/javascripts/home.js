@@ -5,6 +5,7 @@ $(document).ready(function() {
     if(winheight < 800 && winheight > 400){
     var hheight = winheight - $('.top-bar').height() - $('.mainhicon').height();
     $('.header').height(hheight);
+    $('.backwhite').height(winheight - 100);
     }
     $('#back-top').hide();
 

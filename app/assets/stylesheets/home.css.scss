@@ -2,7 +2,9 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 $color1:#0096CD;//#00b4bf;
+$color2:#7AB700;
 $color3:#006A8C;
+$color4:#2F4F4F;
 $heimgheight:400px;
 $hpadding:40px;
 $headfont:'Far.TextBold';
@@ -153,21 +155,44 @@ $iconheight:100px;
 .mysection{
   height: auto;
   min-height: 300px;
-  width: 90%;
+  width: 100%;
   margin-top: 50px;
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 5%;
+  .columns{
+   padding: 0px;
+  }
   .myintro{
     .text-justify{
-      padding: 20px;
+      padding-left: 10%;
+      padding-right: 10%;
     }
   }
   .myintroimg{
     height: auto;
-    img{
-      padding-top: 10%;
+    .left{
+      background-color: $color1;
+      border-radius: 0 150px 150px 0;
+      height: 400px;
+      width: 100%;
+      box-shadow: 0 0 20px #808080;
     }
+    .right{
+      background-color: $color2;
+      border-radius:150px 0 0 150px;
+      height: 400px;
+      width: 100%;
+      box-shadow: 0 0 20px #808080;
+    }
+
+  }
+}
+.distance{
+  margin-bottom: 15%;
+  img{
+    margin: 10%;
+    width: 50%;
   }
 }
 .inmail{
@@ -194,6 +219,14 @@ $iconheight:100px;
     height: $iconheight;
   }
 }
+.sbutton{
+  background-color: inherit;
+  border: 3px solid white;
+  border-radius: 6px;
+  font-family: $bigheadfont;
+  font-size: 20px;
+  margin-top: 20px;
+}
 $sepcolor1 : $color3;
 $sepcolor2 : $color4;
 @mixin seprator($sepcolor){
@@ -206,17 +239,13 @@ $sepcolor2 : $color4;
     color: white;
   }
   .startbutton{
-    background-color: $sepcolor;
-    border: 3px solid white;
-    border-radius: 6px;
-    font-family: $bigheadfont;
-    font-size: 20px;
-    margin-top: 20px;
+    @extend .sbutton;
+    &:hover{
+      background-color: white;
+      color: $sepcolor;
+    }
   }
-  .startbutton:hover{
-    background-color: white;
-    color: $sepcolor;
-  }
+
   .start{
     margin-top: 30px;
   }
@@ -251,6 +280,36 @@ $sepcolor2 : $color4;
   @include seprator(#EEEEEE);
   p, h1, h2, h3, h4, h5{color: black;}
   padding: 20px;
+}
+.backwhite{
+  background-color: #FFFFFF;
+  background-image: url("/assets/circle8.png");
+  background-position: 50% 0;
+  background-repeat: no-repeat;
+  background-size: 70% auto;
+  height: 400px;
+  margin-bottom: 10%;
+  .spectext{
+    margin-top: 11%;
+    width: 55%;
+    h2{
+      font-size: 50px;
+      margin-bottom: 30px;
+    }
+    .button{
+      @extend .sbutton;
+      background-color: $color4;
+      border-color: $color4;
+      width: 200px;
+      box-shadow: 0 0 10px black;
+      &:hover{
+        background-color: white;
+        border-color: white;
+        color: $color4;
+      }
+
+    }
+  }
 }
 .tick{
   background-image: url("/assets/tick2.png");
@@ -397,6 +456,10 @@ $sepcolor2 : $color4;
   h4{
     font-family: $bigheadfont;
   }
+  .footicon{
+    margin-left: 20%;
+    width: 80%;
+  }
   .copyright{
     background-color: $color4;
     //padding: 1%;
@@ -409,5 +472,20 @@ $sepcolor2 : $color4;
         }
       }
     }
+  }
+}
+.top-bar-section{
+  .round{
+    line-height: 45px;
+  }
+  ul{
+    li{
+      a{
+        font-family: $bigheadfont;
+      }
+    }
+  }
+  a{
+
   }
 }
