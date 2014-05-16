@@ -8,7 +8,7 @@ set :default_environment, {
   'PATH' => "/usr/local/rbenv/shims:/usr/local/rbenv/bin:$PATH"
 }
 
-set :application, "54.214.2.25"
+set :application, "stackbox.ir"
 set :user, "stackbox"
 set :use_sudo, false
 
@@ -27,7 +27,7 @@ set :bundle_flags, "--deployment --quiet --binstubs --shebang ruby-local-exec"
 #role :db,  "your primary db-server here", :primary => true # This is where Rails migrations will run
 #role :db,  "your slave db-server here"
 
-server "54.214.2.25", :app, :web, :db, :primary => true
+server "stackbox.ir", :app, :web, :db, :primary => true
 
 after 'deploy:update_code', 'deploy:migrate'
 #after 'deploy:migrate', :defaultsettings
