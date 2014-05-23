@@ -1,68 +1,74 @@
-require "bundler/capistrano"
-require 'capistrano-unicorn'
+require 'mina/bundler'
+require 'mina/rails'
+require 'mina/git'
+# require 'mina/rbenv'  # for rbenv support. (http://rbenv.org)
+# require 'mina/rvm'    # for rvm support. (http://rvm.io)
 
-load 'deploy/assets'
+# Basic settings:
+#   domain       - The hostname to SSH to.
+#   deploy_to    - Path to deploy into.
+#   repository   - Git repo to clone from. (needed by mina/git)
+#   branch       - Branch name to deploy. (needed by mina/git)
 
-set :default_environment, {
-  'RBENV_ROOT' => '/usr/local/rbenv',
-  'PATH' => "/usr/local/rbenv/shims:/usr/local/rbenv/bin:$PATH"
-}
+set :domain, 'foobar.com'
+set :deploy_to, '/var/www/foobar.com'
+set :repository, 'git://...'
+set :branch, 'master'
 
-set :application, "stackbox.ir"
-set :user, "stackbox"
-set :use_sudo, false
+# Manually create these paths in shared/ (eg: shared/config/database.yml) in your server.
+# They will be linked in the 'deploy:link_shared_paths' step.
+set :shared_paths, ['config/database.yml', 'log']
 
-set :repository,  "git://github.com/ircloud/website.git"
-#set :branch, "deploy"
+# Optional settings:
+#   set :user, 'foobar'    # Username in the server to SSH to.
+#   set :port, '30000'     # SSH port number.
 
-set :ssh_options, { :forward_agent => true }
-set :deploy_to, "/home/stackbox/www/"
+# This task is the environment that is loaded for most commands, such as
+# `mina deploy` or `mina rake`.
+task :environment do
+  # If you're using rbenv, use this to load the rbenv environment.
+  # Be sure to commit your .rbenv-version to your repository.
+  # invoke :'rbenv:load'
 
-set :bundle_flags, "--deployment --quiet --binstubs --shebang ruby-local-exec"
-# set :scm, :git # You can set :scm explicitly or Capistrano will make an intelligent guess based on known version control directory names
-# Or: `accurev`, `bzr`, `cvs`, `darcs`, `git`, `mercurial`, `perforce`, `subversion` or `none`
+  # For those using RVM, use this to load an RVM version@gemset.
+  # invoke :'rvm:use[ruby-1.9.3-p125@default]'
+end
 
-#role :web, "Apache"                          # Your HTTP server, Apache/etc
-#role :app, "your app-server here"                          # This may be the same as your `Web` server
-#role :db,  "your primary db-server here", :primary => true # This is where Rails migrations will run
-#role :db,  "your slave db-server here"
+# Put any custom mkdir's in here for when `mina setup` is ran.
+# For Rails apps, we'll make some of the shared paths that are shared between
+# all releases.
+task :setup => :environment do
+  queue! %[mkdir -p "#{deploy_to}/shared/log"]
+  queue! %[chmod g+rx,u+rwx "#{deploy_to}/shared/log"]
 
-server "stackbox.ir", :app, :web, :db, :primary => true
+  queue! %[mkdir -p "#{deploy_to}/shared/config"]
+  queue! %[chmod g+rx,u+rwx "#{deploy_to}/shared/config"]
 
-after 'deploy:update_code', 'deploy:migrate'
-#after 'deploy:migrate', :defaultsettings
-# if you want to clean up old releases on each deploy uncomment this:
-#set :keep_releases, 5
-after "deploy:restart", "deploy:cleanup"
+  queue! %[touch "#{deploy_to}/shared/config/database.yml"]
+  queue  %[echo "-----> Be sure to edit 'shared/config/database.yml'."]
+end
 
-# if you're still using the script/reaper helper you will need
-# these http://github.com/rails/irs_process_scripts
+desc "Deploys the current version to the server."
+task :deploy => :environment do
+  deploy do
+    # Put things that will set up an empty directory into a fully set-up
+    # instance of your project.
+    invoke :'git:clone'
+    invoke :'deploy:link_shared_paths'
+    invoke :'bundle:install'
+    invoke :'rails:db_migrate'
+    invoke :'rails:assets_precompile'
 
-# If you are using Passenger mod_rails uncomment this:
-namespace :deploy do
-  task :start do ; end
-  task :stop do ; end
-  task :restart, :roles => :app, :except => { :no_release => true } do
-    run "#{try_sudo} touch #{File.join(current_path,'tmp','restart.txt')}"
-  end
-
-  namespace :assets do
-    desc 'Run the precompile task locally and rsync with shared'
-    task :precompile, :roles => :web, :except => { :no_release => true } do
-      %x{bundle exec rake assets:precompile}
-      %x{rsync --recursive --times --rsh=ssh --compress --human-readable --progress public/assets #{user}@#{web}:#{shared_path}}
-      %x{bundle exec rake assets:clean}
+    to :launch do
+      queue "touch #{deploy_to}/tmp/restart.txt"
     end
   end
-
-end
-after "deploy:update_code", :precompile_assets
-desc "precompile the assets"
-task :precompile_assets, :roles => :app do
-  run "cd #{release_path} && RAILS_ENV=#{rails_env} bundle exec rake assets:precompile"
 end
 
+# For help in making your deploy script, see the Mina documentation:
+#
+#  - http://nadarei.co/mina
+#  - http://nadarei.co/mina/tasks
+#  - http://nadarei.co/mina/settings
+#  - http://nadarei.co/mina/helpers
 
-after 'deploy:restart', 'unicorn:reload'    # app IS NOT preloaded
-after 'deploy:restart', 'unicorn:restart'   # app preloaded
-after 'deploy:restart', 'unicorn:duplicate' # before_fork hook implemented (zero downtime deployments)
