@@ -57,14 +57,6 @@ GEM
     builder (3.1.4)
     callsite (0.0.11)
     cancan (1.6.10)
-    capistrano (2.15.5)
-      highline
-      net-scp (>= 1.0.0)
-      net-sftp (>= 2.0.0)
-      net-ssh (>= 2.0.14)
-      net-ssh-gateway (>= 1.1.0)
-    capistrano-unicorn (0.2.0)
-      capistrano (< 3.0)
     carrierwave (0.10.0)
       activemodel (>= 3.2.0)
       activesupport (>= 3.2.0)
@@ -112,7 +104,6 @@ GEM
     gettext_i18n_rails (1.0.5)
       fast_gettext (>= 0.4.8)
     hashie (2.1.1)
-    highline (1.6.21)
     hike (1.2.3)
     i18n (0.6.9)
     jbuilder (1.5.3)
@@ -140,21 +131,18 @@ GEM
       railties
     method_source (0.8.2)
     mime-types (1.25.1)
+    mina (0.3.0)
+      open4
+      rake
     minitest (4.7.5)
     model_discovery (0.2.4)
       rails (~> 4.0.2)
     modernizr-rails (2.7.1)
     multi_json (1.9.2)
-    net-scp (1.2.0)
-      net-ssh (>= 2.6.5)
-    net-sftp (2.1.2)
-      net-ssh (>= 2.6.5)
-    net-ssh (2.8.0)
-    net-ssh-gateway (1.2.0)
-      net-ssh (>= 2.6.5)
     omniauth (1.2.1)
       hashie (>= 1.2, < 3)
       rack (~> 1.0)
+    open4 (1.3.4)
     orm_adapter (0.5.0)
     polyglot (0.3.4)
     pry (0.9.12.6)
@@ -238,8 +226,6 @@ PLATFORMS
 DEPENDENCIES
   better_errors
   binding_of_caller
-  capistrano (= 2.15.5)
-  capistrano-unicorn
   compass-rails
   faalis!
   fast_gettext
@@ -251,6 +237,7 @@ DEPENDENCIES
   jquery-rails
   mailgun
   meta_request
+  mina
   pry
   rails (= 4.0.4)
   ruby_parser

@@ -68,8 +68,9 @@ else
   gem 'faalis', :github => 'Yellowen/faalis'
 end
 
-gem 'capistrano', '2.15.5'
-
+#gem 'capistrano', '2.15.5'
+#gem 'mina'
 group :development do
-  gem 'capistrano-unicorn', :require => false
+  #gem 'capistrano-unicorn', :require => false
+  gem 'mina'
 end
