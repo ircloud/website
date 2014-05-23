@@ -22,7 +22,7 @@ set :shared_paths, ['config/database.yml', 'log']
 # Optional settings:
 set :user, 'stackbox'    # Username in the server to SSH to.
 #set :port, '3000'     # SSH port number.
-
+set :rbenv_path, '/usr/local/rbenv'
 # This task is the environment that is loaded for most commands, such as
 # `mina deploy` or `mina rake`.
 task :environment do
@@ -65,6 +65,13 @@ task :deploy => :environment do
   end
 end
 
+task :restart do
+
+end
+
+task :logs do
+  queue 'tail -f /var/log/nginx/error.log'
+end
 # For help in making your deploy script, see the Mina documentation:
 #
 #  - http://nadarei.co/mina
