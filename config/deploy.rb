@@ -47,6 +47,7 @@ task :setup => :environment do
 
   queue! %[chmod g+rx,u+rwx "#{deploy_to}/shared/config"]
   queue! %[chmod g+rwx,u+rwx "#{deploy_to}/tmp"]
+  queue! %[chmod g+rwx,u+rwx "#{deploy_to}/current/tmp"]
 
   queue! %[touch "#{deploy_to}/shared/config/database.yml"]
   #queue  %[echo "-----> Be sure to edit 'shared/config/database.yml'."]
