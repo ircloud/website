@@ -66,6 +66,7 @@ task :deploy => :environment do
 
     to :launch do
       queue "touch #{deploy_to}/tmp/restart.txt"
+      queue! %[mkdir -p "#{deploy_to}/current/tmp/pids"]
       queue! %[chmod g+rwx,u+rwx "#{deploy_to}/current/tmp"]
       queue "#{deploy_to}/current/config/unicorn_init.sh restart"
     end
