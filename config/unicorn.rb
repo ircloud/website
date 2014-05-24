@@ -1,5 +1,5 @@
 # Set your full path to application.
-app_path = "/home/stackbox/www/"
+app_path = "/home/stackbox/mina/current/"
 
 # Set unicorn options
 worker_processes 1
@@ -8,7 +8,7 @@ timeout 180
 listen "127.0.0.1:9000"
 
 # Spawn unicorn master worker for user apps (group: apps)
-user 'apps', 'apps'
+user 'www-data', "www-data"
 
 # Fill path to your app
 working_directory app_path
