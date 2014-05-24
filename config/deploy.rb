@@ -62,7 +62,7 @@ task :deploy => :environment do
 
     to :launch do
       queue "touch #{deploy_to}/tmp/restart.txt"
-      queue "#{deploy_to}/config/unicorn_init.sh restart"
+      queue "#{deploy_to}/current/config/unicorn_init.sh restart"
     end
   end
 end
