@@ -35,19 +35,21 @@ task :environment do
   # invoke :'rvm:use[ruby-1.9.3-p125@default]'
 end
 
+
 # Put any custom mkdir's in here for when `mina setup` is ran.
 # For Rails apps, we'll make some of the shared paths that are shared between
 # all releases.
 task :setup => :environment do
-  queue! %[mkdir -p "#{deploy_to}/shared/log"]
-  queue! %[chmod g+rx,u+rwx "#{deploy_to}/shared/log"]
+  queue! %[mkdir -p "#{deploy_to}shared/log"]
+  queue! %[chmod g+rx,u+rwx "#{deploy_to}shared/log"]
 
   queue! %[mkdir -p "#{deploy_to}/shared/config"]
   queue! %[mkdir -p "#{deploy_to}/tmp/"]
 
   queue! %[chmod g+rx,u+rwx "#{deploy_to}/shared/config"]
   queue! %[chmod g+rwx,u+rwx "#{deploy_to}/tmp"]
-  queue! %[chmod g+rwx,u+rwx "#{deploy_to}/current/tmp"]
+
+  #queue! %[chmod g+rwx,u+rwx "#{deploy_to}/current/tmp"]
 
   queue! %[touch "#{deploy_to}/shared/config/database.yml"]
   #queue  %[echo "-----> Be sure to edit 'shared/config/database.yml'."]
@@ -66,8 +68,8 @@ task :deploy => :environment do
 
     to :launch do
       queue "touch #{deploy_to}/tmp/restart.txt"
-      queue! %[mkdir -p "#{deploy_to}/current/tmp/pids"]
-      queue! %[chmod g+rwx,u+rwx "#{deploy_to}/current/tmp"]
+      system %[mkdir -p "#{deploy_to}/current/tmp/pids"]
+      system %[chmod g+rwx,u+rwx "#{deploy_to}/current/tmp"]
       queue "#{deploy_to}/current/config/unicorn_init.sh restart"
     end
   end
